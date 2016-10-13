@@ -1,0 +1,5 @@
+# COMPILED SOURCE #
+*.pyc
+
+# OTHER #
+*.project
