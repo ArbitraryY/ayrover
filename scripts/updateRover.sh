@@ -2,7 +2,7 @@
 
 DATE=`date +%Y-%m-%d-%T`
 OPT=$1
-LOCAL_REPO_DIR=/home/ayrover
+LOCAL_REPO_DIR="~/ayrover"
 PROJ_NAME=AYRV
 
 if [ $# != 1 ]
@@ -14,6 +14,7 @@ then
 fi
 
 cd ${LOCAL_REPO_DIR}
+pwd
 
 if [ $OPT == "push" ]
 then 
