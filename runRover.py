@@ -4,18 +4,18 @@ Documentation for this module
 """
 
 import sys
-sys.path.append("~/ayrover/modules")
-#print(sys.path)
+import ConfigParser
+#read values from rover.cfg
+config = ConfigParser.ConfigParser()
+config.read('config/rover.cfg')
+sys.path.append(config.get('setup','INSTALL_PATH')+"/ayrover/modules")
+print(sys.path)
+
 from OSC import OSCServer
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 from Movement import Robot as move
 import time
 import atexit
-import ConfigParser
-
-#read values from configuration file
-config = ConfigParser.ConfigParser()
-config.read('ayrover/config/rover.cfg')
 
 #Instantiate server
 oscSrv = OSCServer((config.get('osc_srv','IP'),config.getint('osc_srv','PORT')))
