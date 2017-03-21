@@ -15,6 +15,7 @@ from OSC import OSCServer
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 from Movement import Robot as move
 import time
+from time import sleep
 import atexit
 
 #Instantiate server
@@ -25,6 +26,7 @@ moveRover = move.Robot(left_id=config.getint('motor_params','LEFT_MOTOR_ID'),
                        right_id=config.getint('motor_params','RIGHT_MOTOR_ID'),
                        left_trim=config.getint('motor_params','LEFT_TRIM'),
                        right_trim=config.getint('motor_params','RIGHT_TRIM'))
+
 
 def move(path,tags,args,source):
     '''
